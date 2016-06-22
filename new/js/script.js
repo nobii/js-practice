@@ -8,6 +8,11 @@ const clock2 = customNew(Clock, [ document.getElementById('clock2') ]);
 
 
 // 自作new
-function customNew () {
-    /* 回答はこちらへ */
+function customNew (klass, args) {
+    const obj = {};
+    obj.__proto__ = klass.prototype;
+
+    klass.apply(obj, args);
+
+    return obj;
 }
