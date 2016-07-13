@@ -1,0 +1,42 @@
+.chara {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: #c00;
+    transition-property: top, left;
+    transition-duration: 0.5s;
+    border-radius: 50%;
+}
+
+.chara:before,
+.chara:after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: 20px;
+    width: 16px;
+    height: 16px;
+    background-color: #333;
+    border-radius: 50%;
+}
+.chara:before {
+    top: 50%;
+}
+.chara:after {
+    bottom: 50%;
+}
+
+.chara[data-orientation="down"] {
+    transform: rotate(90deg);
+}
+
+.chara[data-orientation="left"] {
+    transform: rotate(180deg);
+}
+
+.chara[data-orientation="up"] {
+    transform: rotate(270deg);
+}
